@@ -1,0 +1,29 @@
+CREATE TABLE Department (
+  CODE INT,
+  DepartmentName VARCHAR(30),
+  Manager INT,
+  PRIMARY KEY (CODE)
+);
+
+CREATE TABLE Employee (
+  ID INT,
+  EmployeeName VARCHAR(30),
+  Salary INT,
+  PRIMARY KEY (ID)
+);
+
+INSERT INTO Department VALUES
+  (44, 'Engineering', 2538),
+  (82, 'Sales', 6381),
+  (12, 'Marketing', 6381),
+  (99, 'Technical Support', NULL);
+
+INSERT INTO Employee VALUES
+  (2538, 'Lisa Ellison', 4500),
+  (5384, 'Sam Snead', 30500),
+  (6381, 'Maria Rodriguez', 92300);
+  
+SELECT DepartmentName, EmployeeName
+FROM Department
+RIGHT JOIN Employee
+ON Department.Manager = Employee.ID
