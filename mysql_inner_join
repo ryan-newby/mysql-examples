@@ -26,4 +26,4 @@ INSERT INTO Employee VALUES
 SELECT DepartmentName, EmployeeName
 FROM Department
 INNER JOIN Employee
-ON Department.Manager = Employee.ID
+ON Department.Manager = Employee.ID;
