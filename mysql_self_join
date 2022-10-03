@@ -1,0 +1,17 @@
+CREATE TABLE EmployeeManager (
+  ID INT,
+  Name VARCHAR(30),
+  Manager INT,
+  PRIMARY KEY (ID)
+);
+
+INSERT INTO EmployeeManager VALUES
+  (2538, 'Lisa Ellison', 8820),
+  (5384, 'Sam Snead', 8820),
+  (6381, 'Maria Rodriguez', 8820),
+  (8820, 'Bob Barker', NULL);
+  
+SELECT A.Name, B.Name
+FROM EmployeeManager A
+INNER JOIN EmployeeManager B
+ON B.ID = A.Manager;
