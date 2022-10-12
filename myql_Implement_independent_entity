@@ -1,3 +1,32 @@
+/*Implement a new independent entity phone in the Sakila database. 
+Write CREATE TABLE and ALTER TABLE statements that:
+1. Implement the entity as a new phonetable.
+2. Implement the hasrelationships as foreign keys in the Sakila customer, staff, and storetables.
+3. Remove the existing phonecolumn from the Sakila addresstable.
+Step 2 requires adding a foreign key constraint to an existing table. 
+
+Ex:
+```
+ALTER TABLE customer 
+
+
+  ADD FOREIGN KEY (phone_id) REFERENCES phone(phone_id)
+  ON DELETE SET NULL
+  ON UPDATE CASCADE;
+
+```
+
+Specify data types as follows:
+
+- phone_id, phone_number, and country_code have data type INT.
+- phone_type has date type VARCHAR(12) and contains strings like 'Home', 'Mobile', and 'Other'.
+Apply these constraints:
+
+- NOT NULL constraints correspond to cardinalities on the diagram above.
+- Foreign key actions are SET NULL for delete rules and CASCADE for update rules.
+- Specify a suitable column as the phonetable primary key.
+in the Customers table:*/
+
 CREATE TABLE phone (
   phone_id INT NOT NULL,
   country_code INT NOT NULL,
