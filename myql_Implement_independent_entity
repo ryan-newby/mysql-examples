@@ -1,0 +1,34 @@
+CREATE TABLE phone (
+  phone_id INT NOT NULL,
+  country_code INT NOT NULL,
+  phone_number INT NOT NULL,
+  phone_type VARCHAR(12),
+  PRIMARY KEY (phone_id)
+);
+
+ALTER TABLE customer 
+  ADD COLUMN phone_id INT;
+
+ALTER TABLE store 
+  ADD COLUMN phone_id INT;
+
+ALTER TABLE staff 
+  ADD COLUMN phone_id INT;
+  
+ALTER TABLE customer 
+  ADD FOREIGN KEY (phone_id) REFERENCES phone(phone_id)
+  ON DELETE SET NULL
+  ON UPDATE CASCADE;
+ 
+ALTER TABLE store 
+  ADD FOREIGN KEY (phone_id) REFERENCES phone(phone_id)
+  ON DELETE SET NULL
+  ON UPDATE CASCADE;
+  
+ALTER TABLE staff 
+  ADD FOREIGN KEY (phone_id) REFERENCES phone(phone_id)
+  ON DELETE SET NULL
+  ON UPDATE CASCADE;
+  
+ALTER TABLE address
+DROP COLUMN phone;
